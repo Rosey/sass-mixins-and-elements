@@ -1,0 +1,143 @@
+
+@mixin chunky-button($text-shadow-opacity, $border-color, $border-top-color, $border-bottom-color, $color, $gradient-top, $gradient-bottom,$under-background,$active-background,$active-border,$active-border-top) {
+  @include text-shadow(0 1px 0 rgba(255,255,255,$text-shadow-opacity));
+  border-color: $border-color;
+  border-top-color: $border-top-color;
+  border-bottom-color: $border-bottom-color;
+  color: $color;
+  background-color: $gradient-top; // Old browsers
+  @include filter-gradient($gradient-top, $gradient-bottom, vertical); // IE6-9
+  @include background-image(linear-gradient(top,  $gradient-top 0%,$gradient-bottom 100%));
+  
+  &:hover {
+    border-top-color: darken(saturate($border-top-color,50),30);
+    background-color: $gradient-bottom; // Old browsers
+    @include filter-gradient($gradient-bottom, darken($gradient-top,10), vertical); // IE6-9
+    @include background-image(linear-gradient(top,  $gradient-bottom 0%,darken($gradient-top,10) 100%));
+  }
+  &:active {
+    background: $active-background;
+    border: 1px solid $active-border;
+    border-top-color: $active-border-top;
+  }
+
+  &:after {
+    background-color: $under-background;
+    border-color: $border-bottom-color;
+  }
+}
+
+.chunky-button {
+  @include border-radius(3px);
+  @include box-shadow(inset 0px 1px 2px 0 rgba(255,255,255,.1), inset 0 0 2px 0 rgba(255,255,255,.2));
+  @include text-shadow(0 1px 0 rgba(255,255,255,.8));
+  position: relative;
+  display: inline-block;
+  border: 1px solid #b9b9b9;
+  border-top-color: #d0d0d0;
+  border-bottom-color: #a5a5a5;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #555555;
+  background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(top,  #eeeeee 0%, #e2e2e2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #eeeeee 0%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #eeeeee 0%,#e2e2e2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #eeeeee 0%,#e2e2e2 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #eeeeee 0%,#e2e2e2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
+  cursor: pointer;
+  
+  &:after {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3px;
+    left: 0px;
+    z-index: -1;
+    border-radius: 3px;
+    display: block;
+    content: '';
+    box-shadow: 0px 1px 1px 0 rgba(0,0,0,.25);
+    border: 1px solid #a5a5a5;
+    background-color: #b2b1b1;
+  }
+  
+  &:active {
+    @include box-shadow(inset 0 1px 1px 0 rgba(#000,.15), inset 0 0 2px 0px rgba(#000,.15), 0 1px 0 0 #FFF);
+    top: 2px;
+    background: #e3e3e3;
+    border: 1px solid #cacaca;
+    border-top-color: #959595;
+  }
+  
+  &:active:after {
+    display: none;
+  }
+  
+  &.standard-size {
+    height: 27px;
+    padding: 0 11px;
+    font-size: 12px;
+    line-height: 27px;
+    font-weight: 500;
+  }
+
+  &.large-size {
+    border-radius: 4px;
+    height: 37px;
+    padding: 0 25px;
+    font-size: 18px;
+    line-height: 37px;
+    font-weight: 600;
+    
+    &:after {
+      border-radius: 4px;
+    }
+  }
+}
+
+.chunky-button.pink {
+  @include chunky-button($text-shadow-opacity: .3, $border-color: #d16573, $border-top-color: #ee8090, $border-bottom-color: #b84d5a, $color: #913944, $gradient-top: #f997b0, $gradient-bottom: #f56778,$under-background: #cb5462,$active-background: #f56c7e,$active-border: #c75866,$active-border-top: #a14753);
+}
+
+.chunky-button.ocean {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #67abc5, $border-top-color: #8cc5d9, $border-bottom-color: #4191b0, $color: #42788e, $gradient-top: #a8e3f8, $gradient-bottom: #74d0f4,$under-background: #589cb6,$active-background: #8cd6f3,$active-border: #72afc5,$active-border-top: #5c8d9f);
+}
+
+.chunky-button.green {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #89a94d, $border-top-color: #aad063, $border-bottom-color: #6d883b, $color: #5d7731, $gradient-top: #cae285, $gradient-bottom: #a3cd5a,$under-background: #799545,$active-background: #a7cf5f,$active-border: #88a84e,$active-border-top: #6e883f);
+}
+
+.chunky-button.robinsegg {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #68b6b8, $border-top-color: #87d3d5, $border-bottom-color: #47989b, $color: #437b7d, $gradient-top: #b6f1f4, $gradient-bottom: #81e8eb,$under-background: #4fa7aa,$active-background: #87e9ec,$active-border: #6ebdc0,$active-border-top: #58999b);
+}
+
+
+.chunky-button.dark {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #464646, $border-top-color: #535353, $border-bottom-color: #353535, $color: #FFF, $gradient-top: #656565, $gradient-bottom: #444444,$under-background: #414141,$active-background: #484848,$active-border: #3a3a3a,$active-border-top: #2f2f2f);
+  @include text-shadow(0 1px 0 rgba(#000,.4));
+}
+
+.chunky-button.yellow {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #ca9a42, $border-top-color: #eab551, $border-bottom-color: #af8234, $color: #996633, $gradient-top: #feda71, $gradient-bottom: #febe4d,$under-background: #b98a37,$active-background: #fec151,$active-border: #cf9d42,$active-border-top: #a77f35);
+  &:hover {
+    border-top-color: darken(saturate(#eab551,50),20);
+  }
+}
+
+.chunky-button.purple {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #ad7ca8, $border-top-color: #da9fd4, $border-bottom-color: #865d82, $color: #7b5777, $gradient-top: #e8c4e4, $gradient-bottom: #d698d0,$under-background: #946890,$active-background: #d89dd2,$active-border: #af80ab,$active-border-top: #8d6689);
+  &:hover {
+    border-top-color: darken(saturate(#da9fd4,10),10);
+    &:active {
+      border-top-color: #8d6689;
+    }
+  }
+}
+
+.chunky-button.slate {
+  @include chunky-button($text-shadow-opacity: .4, $border-color: #83909a, $border-top-color: #a1aeb7, $border-bottom-color: #5d6b75, $color: #515f6a, $gradient-top: #becbd6, $gradient-bottom: #8da5b7,$under-background: #62727e,$active-background: #92a9ba,$active-border: #778998,$active-border-top: #606f7a);
+
+}
