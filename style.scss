@@ -2,10 +2,12 @@
 @import 'compass/reset';
 @import 'ui-elements/chunky-buttons';
 @import 'ui-elements/tags';
+@import 'ui-elements/tooltips';
+@import 'ui-elements/popbox';
 
 
 body {
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
   font-family: helvetica,arial,sans-serif;
 }
 
@@ -48,8 +50,21 @@ p {
     margin-bottom: 15px;
   }
 
+  .tooltip {
+    margin-right: 35px;
+  }
+  
+}
+
+.container.tooltips {
+    p {
+    margin-bottom: 2em;
+  }
 }
 
 a {
   color: #1169c1;
+  &:hover {
+    color: #222;
+  }
 }
