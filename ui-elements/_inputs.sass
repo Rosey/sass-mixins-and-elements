@@ -1,0 +1,30 @@
+=placeholder-color($color)
+  &::-webkit-input-placeholder 
+    color: $color 
+  &::-moz-placeholder
+    color: $color
+  &::-ms-placeholder
+    color: $color 
+
+
+
+.clean-input
+  +border-radius(3px)
+  +box-shadow(0 1px 0 0 rgba(#FFF,.5),inset 0 2px 2px 0 #d9dfe8)
+  +background-image(linear-gradient(top,  #ecf0f4 0%, #e5ebf2 100%))
+  +placeholder-color(#a1acb8)
+  height: 36px
+  width: 100%
+  padding: 0 8px
+  border: 1px solid #b8c2cf
+  border-top-color: #b0bbc9
+  border-bottom-color: #c5ced9
+  font-family: Helvetica,Arial,sans-serif
+  font-size: 14px 
+  color: #6e8197
+  &:focus
+    +placeholder-color(rgba(#a1acb8,.5))
+    +box-shadow(0 0 5px 1px rgba(#39a5f3,.35),0 1px 0 0 rgba(#FFF,.5),inset 0 1px 4px 0 rgba(#d9dfe8,.5))
+    background: #FFF
+    border-color: #6fa5cb
+    outline: none

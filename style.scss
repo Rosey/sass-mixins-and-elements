@@ -3,7 +3,9 @@
 @import 'ui-elements/chunky-buttons';
 @import 'ui-elements/tags';
 @import 'ui-elements/tooltips';
-@import 'ui-elements/popbox';
+@import 'ui-elements/inputs';
+@import 'ui-elements/shinyButtons';
+
 
 
 body {
@@ -59,6 +61,12 @@ p {
 .container.tooltips {
     p {
     margin-bottom: 2em;
+  }
+}
+
+.container {
+  .clean-input {
+    margin-bottom: 10px;
   }
 }
 

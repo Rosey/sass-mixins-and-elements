@@ -1,0 +1,86 @@
+.shiny-button
+  +border-radius(4px)
+  padding: 0 15px
+  font-family: Helvetica,Arial,sans-serif
+  cursor: pointer
+  text-decoration: none 
+  -webkit-font-smoothing: antialiased 
+  &::-moz-focus-inner
+    border: none
+  &.large
+    height: 42px
+    font-size: 18px
+    font-weight: bold
+  &.medium
+    height: 32px
+    font-size: 16px
+    font-weight: bold
+  &.small
+    height: 22px
+    font-size: 14px
+    font-weight: bold
+  &:focus
+    outline: none
+  &.blue
+    +background-image(linear-gradient(bottom,  #0095ff 0%,#0083e0 35%,#5cbbff 100%))
+    +text-shadow(0 1px 1px rgba(#003e6a,.75))
+    +box-shadow(inset 0 1px 0 0 rgba(#FFF,.35), 0 1px 2px 0 rgba(#a4aab2,.5))
+    border: 1px solid #0266b3 
+    border-top-color: #0379ce
+    border-bottom-color: #004384
+    color: #FFF
+    &:hover
+      +background-image(linear-gradient(bottom,  #0095ff 0%,#007ee0 35%,#8dd0ff 100%))
+    &:active
+      +box-shadow(inset 0 2px 5px 0 rgba(#003379,.75))
+      +background-image(linear-gradient(bottom,  #31a4f6 0%,#0c6fd3 65%))
+      border-color: #055098
+      border-top-color: #00386f
+      border-bottom-color: #0a66c0
+  &.teal
+    +background-image(linear-gradient(bottom,  #00FFAD 0%,#00E098 35%,#5CFFA4 100%))
+    +text-shadow(0 1px 1px rgba(0, 106, 47, 0.75))
+    +box-shadow(inset 0 1px 0 0 rgba(#FFF,.35), 0 1px 2px 0 rgba(164, 178, 172, 0.5))
+    border: 1px solid #02B35E 
+    border-top-color: #03CE7D
+    border-bottom-color: #00845F
+    color: #FFF
+    &:hover
+      +background-image(linear-gradient(bottom,  #00FFAD 0%,#00E07D 35%,#BDFFDD 100%))
+    &:active
+      +box-shadow(inset 0 2px 5px 0  rgba(0, 121, 68, 0.75))
+      +background-image(linear-gradient(bottom,  #31F6B7 0%,#0CD38B 65%))
+      border-color: #05988C
+      border-top-color: #139662
+      border-bottom-color: #0AC070
+  &.pink
+    +background-image(linear-gradient(bottom,  #FF74D3 0%,#FF4CBF 35%,#FFA9D9 100%))
+    +text-shadow(0 1px 1px rgba(179, 17, 107, 0.75))
+    +box-shadow(inset 0 1px 0 0 rgba(#FFF,.35), 0 1px 2px 0 rgba(207, 192, 200, 0.5))
+    border: 1px solid #CF72AA 
+    border-top-color: #E282CB
+    border-bottom-color: #E44E9C
+    color: #FFF
+    &:hover
+      +background-image(linear-gradient(bottom,  #FF74D3 0%,#FF59BC 35%,#FFC8E2 100%))
+    &:active
+      +box-shadow(inset 0 2px 5px 0  rgba(121, 0, 68, 0.75))
+      +background-image(linear-gradient(bottom,  #F631A7 0%,#D30C8B 65%))
+      border-color: #98054C
+      border-top-color: #961357
+      border-bottom-color: #C00A77
+
+
+
+
+
+
+a.shiny-button
+  display: inline-block
+
+a.shiny-button.large
+  line-height: 42px
+a.shiny-button.medium
+  line-height: 32px
+a.shiny-button.small
+  line-height: 22px
