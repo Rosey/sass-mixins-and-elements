@@ -1,0 +1,48 @@
+.slider
+  +border-radius(40px)
+  position: relative
+  display: inline-block
+  margin-right: 25px
+  cursor: pointer
+
+.slider-track
+  +box-shadow(0 1px 0 0 rgba(#FFF,.6), inset 0 1px 4px 0 rgba(#000,.5))
+  +border-radius(40px)
+  display: block
+  width: 30px
+  height: 13px
+  background: #8e8d8d
+
+.slider-circle
+  +transition(left 50ms linear)
+  +border-radius(15px)
+  +box-shadow(0 1px 2px 0 rgba(#000,.7), inset 0 0 2px 1px #eee)
+  border: 1px solid #777
+  position: absolute
+  left: -5px
+  top: -4px
+  display: block
+  width: 18px
+  height: 18px
+  background: #fff
+  +background-image(radial-gradient(center, ellipse cover,  #d3d3d3 15%,#777 22%, #ffffff 30%))
+
+.slider.active .slider-circle
+  left: 15px
+
+
+
+
+
+.slider.green
+  .slider-track
+    +transition(background 0 linear)
+    transition-delay: 100ms
+    -moz-transition-delay: 100ms
+    -webkit-transition-delay: 100ms
+    -o-transition-delay: 100ms
+    background: red
+
+.slider.green.active
+  .slider-track
+    background: green
